@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Downloader</title>
+  <link rel="icon" href="{% static 'icon.svg' %}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header>
+      <img style="background-color:white; border-radius: 10px;" src= "{% static 'icon.svg' %}" alt="YouTube Logo">
+    <h1>YouTube Video Downloader</h1>
+  </header>
+  <main>
+    <section>
+      <h2>What is YouTube Video Downloader?</h2>
+      <p>YouTube Video Downloader is a free online service that allows you to download YouTube videos to your computer or mobile device.</p>
+      <p>You can download videos in a variety of formats, including MP4, AVI, and WebM. You can also choose to download the audio track only, if you prefer.</p>
+    </section>
+    <main>
+  <center>
+      <form action="{% url 'home' %}" method='post'>
+       {% csrf_token %}
+      <input type="text" name='url' placeholder="https://www.youtube.com/watch?v=-KnAZcXzxRA" id="video-url" class="input" required />
+      <input type="submit" value="Download" id="download-button"/>
+      <h5>{{err}}</h5>
+    </form>
+  </center>  
+ </main>
+    <section>
+      <h2>How to use YouTube Video Downloader</h2>
+      <p>To use YouTube Video Downloader, simply enter the URL of the YouTube video you want to download in the search bar and click the "Download" button.</p>
+      <p>You will then be prompted to select a download format and quality. Once you have selected your desired options, click the "Download Now" button to start downloading the video.</p>
+    </section>
+    <section>
+      <h2>Features of YouTube Video Downloader</h2>
+      <ul>
+        <li>Download YouTube videos in a variety of formats, including MP4, AVI, and WebM.</li>
+        <li>Download the audio track only, if you prefer.</li>
+        <li>Download videos in high quality, up to 1080p.</li>
+        <li>Convert YouTube videos to MP3 files.</li>
+        <li>Download multiple videos at once.</li>
+        <li>Free and easy to use.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2023 YouTube Video Downloader</p>
+  </footer>
+</body>
+</html>
+
